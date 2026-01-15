@@ -8,7 +8,7 @@ export const Logo = () => {
         alt="Simplilearn Logo"
         width={120}
         height={40}
-        className="h-28 w-auto"
+        className="h-auto w-auto"
         priority
       />
     </div>

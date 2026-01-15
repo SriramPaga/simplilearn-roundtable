@@ -12,25 +12,14 @@ export const InsightsSection = () => {
 
   return (
     <section className="bg-white">
-      <div className="max-w-[1440px] mx-auto px-6 lg:px-20 pt-[56px] lg:pt-[72px] pb-[64px]">
-        
+      <div className="max-w-[1440px] mx-auto px-[20px] lg:px-[104px] pt-[56px] lg:pt-[72px] pb-[64px]">
+
         {/* GRID */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-[48px] lg:gap-[64px] items-start">
 
-          {/* IMAGE — FIRST ON MOBILE */}
-          <div
-            className="
-              order-1
-              lg:order-2
-              relative
-              z-0
-              flex
-              justify-center
-              lg:justify-end
-              max-w-[570px]
-            "
-          >
-            <div className="relative w-[260px] h-[260px] sm:w-[320px] sm:h-[320px] lg:w-[570px] lg:h-[611px]">
+          {/* IMAGE — first on mobile */}
+          <div className="order-1 lg:order-2 relative z-0 flex justify-center lg:justify-end">
+            <div className="relative w-[293px] h-[299px] lg:w-[570px] lg:h-[611px]">
               <Image
                 src="/images/chess-pieces.jpg"
                 alt="Strategic leadership chess pieces"
@@ -41,26 +30,19 @@ export const InsightsSection = () => {
             </div>
           </div>
 
-          {/* CONTENT — SECOND ON MOBILE */}
-          <div
-            className="
-              order-2
-              lg:order-1
-              relative
-              z-10
-              max-w-[801px]
-            "
-          >
+          {/* CONTENT */}
+          <div className="order-2 lg:order-1 relative z-10 max-w-[801px]">
+
             {/* HEADING */}
             <h2
               className="
                 font-satoshi
                 font-black
-                text-[#F5A623]
+                text-[#F5AB40]
                 text-[24px]
-                leading-[24px]
+                leading-[32px]
                 lg:text-[40px]
-                lg:leading-[48px]
+                lg:leading-[54px]
                 max-w-[687px]
                 mb-[20px]
                 lg:mb-[24px]
@@ -69,20 +51,20 @@ export const InsightsSection = () => {
               Go behind the curtain with real examples and high-scale insights
             </h2>
 
-            {/* INDENTED BLOCK */}
-            <div className="pl-[24px] lg:pl-[48px]">
+            {/* INDENTED CONTENT */}
+            <div className="pl-[18px] lg:pl-[48px]">
 
               {/* SUBHEADING */}
               <p
                 className="
                   font-satoshi
                   font-bold
+                  lg:font-medium
+                  text-black
                   text-[17px]
                   leading-[27px]
-                  lg:font-medium
                   lg:text-[25px]
-                  lg:leading-[32px]
-                  text-black
+                  lg:leading-[34px]
                   mb-[16px]
                   lg:mb-[20px]
                 "
@@ -91,18 +73,19 @@ export const InsightsSection = () => {
               </p>
 
               {/* BULLETS */}
-              <ul className="space-y-[20px] lg:space-y-[28px]">
+              <ul className="space-y-[22px] lg:space-y-[30px]">
                 {insights.map((insight, index) => (
                   <li key={index} className="flex items-start gap-[14px] lg:gap-[16px]">
 
-                    {/* ORANGE BAR */}
+                    {/* ORANGE BAR — fixed height */}
                     <span
                       className="
-                        w-[2px]
-                        bg-[#F5A623]
-                        self-stretch
-                        mt-[4px]
+                        w-[3px]
+                        h-[39px]
+                        lg:h-[59px]
+                        bg-[#F5AB40]
                         flex-shrink-0
+                        mt-[4px]
                       "
                     />
 
@@ -111,11 +94,11 @@ export const InsightsSection = () => {
                       className="
                         font-satoshi
                         font-medium
+                        text-black
                         text-[15px]
                         leading-[27px]
                         lg:text-[20px]
                         lg:leading-[30px]
-                        text-black
                         max-w-[560px]
                       "
                     >
@@ -128,7 +111,7 @@ export const InsightsSection = () => {
           </div>
         </div>
 
-        {/* RSVP — BELOW BOTH COLUMNS */}
+        {/* RSVP — FULL WIDTH BELOW */}
         <div className="mt-[40px] lg:mt-[56px]">
           <RSVPForm inputBgClass="bg-[rgba(231,231,231,0.2)]" />
         </div>

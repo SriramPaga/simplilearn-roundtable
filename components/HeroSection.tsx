@@ -26,12 +26,12 @@ export const HeroSection = () => {
       </div>
 
       {/* Gradient Overlay */}
-      <div
+      {/* <div
         className="
           absolute inset-0
           bg-[linear-gradient(287deg,rgba(28,78,241,0.45)_-11%,rgba(26,60,182,0.45)_106%)]
         "
-      />
+      /> */}
 
       {/* Content */}
       <div
