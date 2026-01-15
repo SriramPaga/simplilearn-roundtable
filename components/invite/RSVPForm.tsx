@@ -32,7 +32,7 @@ export const RSVPForm = ({
 
     setTimeout(() => setSuccess(false), 3000);
   };
-
+  const isFooter = inputBgClass.includes("0.9");
   return (
     <form onSubmit={handleSubmit} className="w-full">
       <div
@@ -61,16 +61,17 @@ export const RSVPForm = ({
           `}
         >
           {/* ICON */}
-          <span
-            className="
+       <span
+  className={`
     absolute
-    left-[16.39px]
+    left-[16px]
     top-[12px]
-
     lg:left-[24px]
     lg:top-[27.5px]
-  "
-          >
+    transition
+    ${isFooter ? "opacity-100 brightness-100" : "opacity-70"}
+  `}
+>
             <Image
               src="/icons/mail.png"
               alt="Email"
@@ -79,7 +80,6 @@ export const RSVPForm = ({
               className="
       w-[23.8px]
       h-[19.5px]
-
       lg:w-[33px]
       lg:h-[26px]
     "
