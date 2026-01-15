@@ -107,21 +107,35 @@ export const SpeakersSection = () => {
         </div>
 
         {/* Additional Expert Perspectives Card */}
-        <div
-          className="
-            mt-[64px] lg:mt-[72px]
-            mx-auto
-            w-[389px] h-[195px]
-            lg:w-[1278px] lg:h-[224px]
-            bg-[url('/images/speakerSection.png')]
-            bg-cover bg-center
-            rounded-[8px]
-            px-[24px] lg:px-[88px]
-            py-[24px]
-            flex flex-col justify-center
-            text-center lg:text-left
-          "
-        >
+     <div
+  className="
+    mt-[64px] lg:mt-[72px]
+    mx-auto
+
+    /* === WIDTH & HEIGHT === */
+    w-full                 /* allows shrink on <389px screens */
+    max-w-[389px]          /* exact Figma mobile width */
+    h-[195px]
+
+    lg:max-w-[1278px]      /* exact Figma desktop width */
+    lg:h-[224px]
+
+    /* === BACKGROUND === */
+    bg-[url('/images/speakerSection.png')]
+    bg-cover bg-center
+    rounded-[8px]
+
+    /* === PADDING (FIGMA) === */
+    px-[24px]
+    lg:px-[88px]
+    py-[24px]
+
+    /* === LAYOUT === */
+    flex flex-col justify-center
+    text-center lg:text-left
+  "
+>
+
           <h3
             className="
               font-satoshi font-black

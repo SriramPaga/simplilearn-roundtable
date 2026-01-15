@@ -2,53 +2,37 @@ import localFont from 'next/font/local'
 
 export const satoshi = localFont({
   src: [
+    // Regular
     {
       path: './Satoshi-Regular.woff2',
       weight: '400',
       style: 'normal',
     },
-    {
-      path: './Satoshi-Regular.woff',
-      weight: '400',
-      style: 'normal',
-    },
+
+    // Medium
     {
       path: './Satoshi-Medium.woff2',
       weight: '500',
-      style: 'medium',
+      style: 'normal',
     },
-    {
-      path: './Satoshi-Medium.woff',
-      weight: '500',
-      style: 'medium',
-    },
+
+    // Bold
     {
       path: './Satoshi-Bold.woff2',
       weight: '700',
       style: 'normal',
     },
-    {
-      path: './Satoshi-Bold.woff',
-      weight: '700',
-      style: 'normal',
-    },
+
+    // Black
     {
       path: './Satoshi-Black.woff2',
       weight: '900',
       style: 'normal',
     },
-    {
-      path: './Satoshi-Black.woff',
-      weight: '900',
-      style: 'normal',
-    },
+
+    // Regular Italic (only one needed)
     {
       path: './Satoshi-Italic.woff2',
-      weight: '400',
-      style: 'italic',
-    },
-    {
-      path: './Satoshi-Italic.woff',
       weight: '400',
       style: 'italic',
     },

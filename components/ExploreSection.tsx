@@ -10,7 +10,7 @@ export const ExploreSection = () => {
     {
       title: "Manager Role Shift",
       description: "orchestrating people + AI agents",
-      icon: "account_tree",
+      icon: "account",
     },
     {
       title: "Leaders + AI Co-Pilots",
@@ -20,7 +20,7 @@ export const ExploreSection = () => {
     {
       title: "Frontline Capability",
       description: "now depends on digital fluency",
-      icon: "verified_user",
+      icon: "verifiedUser",
     },
     {
       title: "Core Human Capabilities",
@@ -30,7 +30,7 @@ export const ExploreSection = () => {
     {
       title: "Winning Organizations",
       description: "predict skills ahead of demand",
-      icon: "rocket_launch",
+      icon: "rocket",
     },
   ];
 

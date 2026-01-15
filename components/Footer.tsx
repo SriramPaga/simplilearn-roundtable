@@ -67,7 +67,6 @@
 //   );
 // };
 
-
 import Image from "next/image";
 import { Logo } from "./Logo";
 import { RSVPForm } from "./invite/RSVPForm";
@@ -94,68 +93,54 @@ export const Footer = () => {
           relative
           max-w-[1440px]
           mx-auto
-          px-6
-          lg:px-20
-          py-8
+          px-[20px]
+          lg:px-[100px]
+          h-[317px]
           lg:h-[476px]
           flex
           flex-col
         "
       >
         {/* CTA */}
-        <div
-          className="
-            flex
-            flex-col
-            items-center
-            lg:items-start
-            gap-4
-            lg:gap-6
-          "
-        >
+        <div className="pt-[24px] lg:pt-[40px]">
           <h2
             className="
               font-satoshi
               font-black
               text-white
-              text-[20px]
-              leading-[27px]
+
+              text-[19px]
+              leading-[26px]
+
               lg:text-[30px]
               lg:leading-[41px]
-              text-center
-              lg:text-left
+
+              mb-[36px]
             "
           >
             Space is limited.
           </h2>
 
           {/* RSVP FORM */}
-          <div
-            className="
-              w-full
-              max-w-[389px]
-              lg:max-w-none
-              lg:flex
-              lg:items-center
-              lg:gap-[24px]
-            "
-          >
-            <RSVPForm inputBgClass="bg-[rgba(231,231,231,0.9)]" />
-          </div>
+          <RSVPForm inputBgClass="bg-[rgba(231,231,231,0.9)]" inputRadiusClass="rounded-[8px]" />
         </div>
 
         {/* FOOTER BOTTOM */}
         <div
           className="
-            mt-10
-            lg:mt-auto
-            flex
-            flex-col
-            lg:flex-row
-            items-center
-            justify-between
-            gap-4
-          "
+    mt-10
+    lg:mt-auto
+
+    flex
+    flex-col
+    items-start        /* ← mobile: left aligned */
+
+    lg:flex-row
+    lg:items-center
+    lg:justify-between
+
+    gap-4
+  "
         >
           {/* LOGO */}
           <div className="w-[150px] h-[46px] lg:w-[280px] lg:h-[86px]">
@@ -165,16 +150,19 @@ export const Footer = () => {
           {/* COPYRIGHT */}
           <p
             className="
-              font-satoshi
-              font-medium
-              text-white
-              text-[13px]
-              leading-[18px]
-              lg:text-[20px]
-              lg:leading-[27px]
-              tracking-[0.02em]
-              text-center
-            "
+      font-satoshi
+      font-medium
+      text-white
+
+      text-[13px]
+      leading-[18px]
+
+      lg:text-[20px]
+      lg:leading-[27px]
+
+      tracking-[0.02em]
+      text-left           /* ← mobile: left aligned */
+    "
           >
             © 2009–2025 · Simplilearn Solutions. All Rights Reserved.
           </p>
