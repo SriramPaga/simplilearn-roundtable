@@ -2,21 +2,18 @@ Simplilearn Executive Roundtable – Landing Page
 
 Technical Assessment Submission (SDE-1 / Frontend)
 
-Overview
+🔗 **Live Demo:** https://simplilearn-roundtable.vercel.app/  
+📦 **GitHub Repo:** https://github.com/SriramPaga/simplilearn-roundtable
 
+Overview
 This repository contains a pixel-perfect, responsive landing page for the Simplilearn Executive Roundtable event, implemented strictly as per the provided Figma design.
 
-The project is built to demonstrate:
-
-Exact Figma-to-code accuracy
-
-Clean, readable component architecture
-
-Proper use of modern Next.js (App Router) patterns
-
-Responsive correctness across desktop and mobile breakpoints
-
-This implementation intentionally avoids over-engineering and aligns with real-world frontend technical assessment expectations.
+-The project is built to demonstrate:
+-Exact Figma-to-code accuracy
+-Clean, readable component architecture
+-Proper use of modern Next.js (App Router) patterns
+-Responsive correctness across desktop and mobile breakpoints
+-This implementation intentionally avoids over-engineering and aligns with real-world frontend technical assessment expectations.
 
 Key Focus Areas
 
