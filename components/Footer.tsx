@@ -1,84 +1,24 @@
-// import Image from "next/image";
-// import { Logo } from "./Logo";
-// import { RSVPForm } from "./invite/RSVPForm";
+const container =
+  'relative max-w-[1440px] mx-auto px-[20px] lg:px-[100px] h-[317px] lg:h-[476px] flex flex-col';
 
-// export const Footer = () => {
-//   return (
-//     <footer className="relative w-full overflow-hidden">
-//       {/* Background image (top-aligned like reference) */}
-//       <div className="absolute inset-0">
-//         <Image
-//           src="/images/venue.jpg"
-//           alt="Venue background"
-//           fill
-//           className="object-cover object-top"
-//           priority
-//         />
-//       </div>
+const headingText =
+  'font-satoshi font-black text-white text-[19px] leading-[26px] lg:text-[30px] lg:leading-[41px]';
 
-//       {/* Foreground content */}
-//       <div
-//         className="
-//           relative
-//           max-w-[1440px]
-//           mx-auto
-//           px-6
-//           lg:px-20
-//           h-[317px]
-//           lg:h-[457px]
-//           flex
-//           flex-col
-//         "
-//       >
-//         {/* CTA block (top aligned) */}
-//         <div className="pt-[24px] max-w-[1000px]">
-//           <h2 className="text-white text-[28px] leading-[36px] font-bold mb-[16px]">
-//             Space is limited.
-//           </h2>
+const copyrightText =
+  'font-satoshi font-medium text-white text-[13px] leading-[18px] lg:text-[20px] lg:leading-[27px] tracking-[0.02em]';
 
-//           {/* RSVP Form */}
-//          <RSVPForm inputBgClass="bg-[rgba(231,231,231,0.9)]" />
-
-//         </div>
-
-//         {/* Footer bottom (anchored to bottom edge) */}
-//         <div className="mt-auto pb-[20px]">
-//           <div
-//             className="
-//               flex
-//               flex-col
-//               md:flex-row
-//               md:items-center
-//               md:justify-between
-//               gap-[10px]
-//             "
-//           >
-//             {/* Logo */}
-//             <Logo />
-
-//             {/* Copyright */}
-//             <p className="text-white text-[13px] leading-[18px]">
-//               © 2009–2025 · Simplilearn Solutions. All Rights Reserved.
-//             </p>
-//           </div>
-//         </div>
-//       </div>
-//     </footer>
-//   );
-// };
-
-import Image from "next/image";
-import { Logo } from "./Logo";
-import { RSVPForm } from "./invite/RSVPForm";
+  import Image from 'next/image';
+import { Logo } from './Logo';
+import { RSVPForm } from './invite/RSVPForm';
 
 export const Footer = () => {
   return (
     <footer className="relative w-full overflow-hidden">
-      {/* BACKGROUND */}
-      <div className="absolute inset-0">
+      {/* Background (decorative) */}
+      <div aria-hidden className="absolute inset-0">
         <Image
           src="/images/venue.jpg"
-          alt="Venue background"
+          alt=""
           fill
           priority
           className="object-cover"
@@ -87,83 +27,37 @@ export const Footer = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-black/0 to-black/60" />
       </div>
 
-      {/* CONTENT */}
-      <div
-        className="
-          relative
-          max-w-[1440px]
-          mx-auto
-          px-[20px]
-          lg:px-[100px]
-          h-[317px]
-          lg:h-[476px]
-          flex
-          flex-col
-        "
-      >
+      {/* Content */}
+      <div className={container}>
         {/* CTA */}
         <div className="pt-[24px] lg:pt-[40px]">
-          <h2
-            className="
-              font-satoshi
-              font-black
-              text-white
-
-              text-[19px]
-              leading-[26px]
-
-              lg:text-[30px]
-              lg:leading-[41px]
-
-              mb-[36px]
-            "
-          >
+          <h2 className={`${headingText} mb-[36px]`}>
             Space is limited.
           </h2>
 
-          {/* RSVP FORM */}
-          <RSVPForm inputBgClass="bg-[rgba(231,231,231,0.9)]" inputRadiusClass="rounded-[8px]" />
+          <RSVPForm
+            inputBgClass="bg-[rgba(231,231,231,0.9)]"
+            inputRadiusClass="rounded-[8px]"
+          />
         </div>
 
-        {/* FOOTER BOTTOM */}
+        {/* Footer Bottom */}
         <div
           className="
-    mt-10
-    lg:mt-auto
-
-    flex
-    flex-col
-    items-start        /* ← mobile: left aligned */
-
-    lg:flex-row
-    lg:items-center
-    lg:justify-between
-
-    gap-4
-  "
+            mt-10 lg:mt-auto
+            flex flex-col
+            items-start
+            lg:flex-row lg:items-center lg:justify-between
+            gap-4
+          "
         >
-          {/* LOGO */}
+          {/* Logo */}
           <div className="w-[150px] h-[46px] lg:w-[280px] lg:h-[86px]">
             <Logo />
           </div>
 
-          {/* COPYRIGHT */}
-          <p
-            className="
-      font-satoshi
-      font-medium
-      text-white
-
-      text-[13px]
-      leading-[18px]
-
-      lg:text-[20px]
-      lg:leading-[27px]
-
-      tracking-[0.02em]
-      text-left           /* ← mobile: left aligned */
-    "
-          >
+          {/* Copyright */}
+          <p className={copyrightText}>
             © 2009–2025 · Simplilearn Solutions. All Rights Reserved.
           </p>
         </div>

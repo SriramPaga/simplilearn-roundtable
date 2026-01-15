@@ -11,17 +11,5 @@
 
   body {
     @apply antialiased;
-    /* font-family: var(--font-satoshi); */
   }
 }
-/* 
-@font-face {
-  font-family: 'Satoshi Variable';
-  src: url('/fonts/Satoshi-Variable.ttf') format('truetype');
-  font-weight: 100 900;
-  font-display: swap;
-}
-
-.font-satoshi {
-  font-family: 'Satoshi Variable', sans-serif;
-} */

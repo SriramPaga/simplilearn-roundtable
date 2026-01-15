@@ -1,38 +1,38 @@
-import { Logo } from "./Logo";
-import Image from "next/image";
+import Image from 'next/image';
+import { Logo } from './Logo';
+
+const container =
+  'relative z-10 max-w-[1440px] mx-auto px-4 sm:px-5 lg:px-[100px] min-h-[572px] lg:min-h-[693px] flex flex-col';
+
+const heroTitle =
+  'font-satoshi font-black text-[#F5AB40] text-[32px] leading-[40px] lg:text-[46px] lg:leading-[62px]';
+
+const metaText =
+  'flex items-center gap-3 text-[18px] lg:text-[30px] text-white font-black';
+
+
 export const HeroSection = () => {
   return (
     <section className="relative w-full overflow-hidden">
       {/* Background */}
       <div
+        aria-hidden
         className="
           absolute inset-0
           bg-[url('/images/hero-bg.jpg')]
           bg-cover bg-center
         "
       />
-      <div className="absolute inset-0 bg-black/20" />
+      <div aria-hidden className="absolute inset-0 bg-black/20" />
 
-      {/* Content container */}
-      <div
-        className="
-          relative z-10
-          max-w-[1440px]
-          mx-auto
-          px-4
-          sm:px-5
-          lg:px-[100px]
-          min-h-[572px]
-          lg:min-h-[693px]
-          flex flex-col
-        "
-      >
+      {/* Content */}
+      <div className={container}>
         {/* Logo */}
         <div className="pt-6 lg:pt-[54px]">
           <Logo />
         </div>
 
-        {/* Main content */}
+        {/* Main Content */}
         <div className="flex-1 flex flex-col justify-center">
           {/* Invite Row */}
           <div className="flex flex-wrap items-center gap-3 mb-6">
@@ -41,8 +41,7 @@ export const HeroSection = () => {
                 bg-[#00FFFF]
                 text-[#25286A]
                 font-bold
-                text-[16px]
-                lg:text-[25px]
+                text-[16px] lg:text-[25px]
                 px-4 py-1.5
                 rounded-[6px]
                 whitespace-nowrap
@@ -57,46 +56,34 @@ export const HeroSection = () => {
           </div>
 
           {/* Heading */}
-          <h1
-            className="
-              max-w-[771px]
-              font-satoshi
-              font-black
-              text-[#F5AB40]
-              text-[32px]
-              leading-[40px]
-              lg:text-[46px]
-              lg:leading-[62px]
-              mb-6
-            "
-          >
+          <h1 className={`${heroTitle} max-w-[771px] mb-6`}>
             The Skills That Matter Next:
             <br />
             <span className="font-medium">
-
-            Preparing Your Workforce
-            <br />& Leaders for the AI Era
+              Preparing Your Workforce
+              <br />& Leaders for the AI Era
             </span>
           </h1>
 
-          {/* Meta */}
-          <div className="space-y-3 text-white font-black">
-            <div className="flex items-center gap-3 text-[18px] lg:text-[30px]">
+          {/* Meta Info */}
+          <div className="space-y-3">
+            <div className={metaText}>
               <Image
                 src="/icons/calendar.png"
-                alt="Date"
+                alt="Event date"
                 width={24}
                 height={27}
                 className="w-[18px] h-[20px] lg:w-[24px] lg:h-[27px]"
               />
               February 20, 2026
             </div>
-            <div className="flex items-center gap-3 text-[18px] lg:text-[30px]">
+
+            <div className={metaText}>
               <Image
                 src="/icons/location.png"
-                alt="Date"
+                alt="Event location"
                 width={24}
-                height={230}
+                height={30}
                 className="w-[18px] h-[22px] lg:w-[24px] lg:h-[30px]"
               />
               Chamberlain’s Steak & Fish House, Dallas
@@ -107,3 +94,4 @@ export const HeroSection = () => {
     </section>
   );
 };
+
