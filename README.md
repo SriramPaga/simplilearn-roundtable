@@ -1,184 +1,164 @@
-# Simplilearn Executive Roundtable Landing Page
+Simplilearn Executive Roundtable – Landing Page
 
-A pixel-perfect, responsive landing page for the Simplilearn Executive Roundtable event built with Next.js 15, TypeScript, and Tailwind CSS.
+Technical Assessment Submission (SDE-1 / Frontend)
 
-## Features
+Overview
 
-- **Next.js 15** with App Router
-- **TypeScript** for type safety
-- **Tailwind CSS** for styling
-- **Server Components** for optimal performance
-- **Server Actions** for form handling
-- **Airtable Integration** for RSVP submissions
-- **Fully Responsive** design (mobile and desktop)
-- **Pixel-perfect** implementation matching the design specs
+This repository contains a pixel-perfect, responsive landing page for the Simplilearn Executive Roundtable event, implemented strictly as per the provided Figma design.
 
-## Prerequisites
+The project is built to demonstrate:
 
-- Node.js 18.17 or later
-- npm, yarn, pnpm, or bun
-- Airtable account (for RSVP functionality)
+Exact Figma-to-code accuracy
 
-## Getting Started
+Clean, readable component architecture
 
-### 1. Clone the repository
+Proper use of modern Next.js (App Router) patterns
 
-```bash
-git clone <your-repo-url>
-cd simplilearn-roundtable
-```
+Responsive correctness across desktop and mobile breakpoints
 
-### 2. Install dependencies
+This implementation intentionally avoids over-engineering and aligns with real-world frontend technical assessment expectations.
 
-```bash
-npm install
-# or
-yarn install
-# or
-pnpm install
-```
+Key Focus Areas
 
-### 3. Set up environment variables
+🎯 Pixel-perfect UI (no approximations)
 
-Create a `.env.local` file in the root directory:
+🧩 Reusable, well-scoped components
 
-```env
-AIRTABLE_API_KEY=your_api_key_here
-AIRTABLE_BASE_ID=your_base_id_here
-AIRTABLE_TABLE_NAME=RSVPs
-```
+⚡ Minimal JavaScript, maximum clarity
 
-**How to get Airtable credentials:**
+📱 Design-driven responsiveness
 
-1. Go to [Airtable](https://airtable.com) and sign up/login
-2. Create a new base or use an existing one
-3. Create a table named "RSVPs" with the following fields:
-   - `Email` (Single line text)
-   - `SubmittedAt` (Date with time)
-4. Get your API key from [Airtable Account](https://airtable.com/account)
-5. Get your Base ID from the API documentation or URL
+🧠 Clear Server vs Client component separation
 
-### 4. Run the development server
+Tech Stack (and Why)
+Technology	Reason
+Next.js 15 (App Router)	Latest stable version, Server Components by default
+React 18	Concurrent rendering, required by Next.js
+TypeScript	Type safety and production-ready code
+Tailwind CSS	Utility-first styling for pixel-accurate layouts
+next/font/local	Local Satoshi Variable font (no CDN dependency)
+Server Actions	Form submission without API routes
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+⚠️ No UI libraries, CSS frameworks, or animation libraries were used — by design.
 
-Open [http://localhost:3000](http://localhost:3000) in your browser to see the result.
+Engineering Decisions (For Reviewers)
+1. Pixel-Perfect Design Fidelity
+-Spacing, font sizes, line heights, and widths match Figma specs exactly
+-Tailwind arbitrary values (w-[389px], leading-[27px], etc.) are used intentionally
+-No “close enough” styling or visual shortcuts
 
-## Project Structure
+2. Responsive Strategy
 
-```
+-Breakpoints strictly follow the design:
+-Desktop: 1440px
+-Mobile: 430px
+-Layout remains stable between 430px → 1440px
+-No scaling hacks or overflow fixes
+
+3. Typography
+
+-Satoshi Variable loaded locally via next/font/local
+-Font weights used exactly as per design: 400 / 500 / 700 / 900
+-Font sizes and line heights match Figma values
+
+4. Styling Approach
+-Tailwind CSS only
+-No external CSS files
+-No inline <style> tags
+-Conditional styling handled via component props (e.g., footer form)
+
+5. RSVP Form Architecture
+
+-Implemented using Next.js Server Actions
+-Client Components used only where interactivity is required
+-Visual success feedback shown after submission
+-Same form component reused across sections with contextual styling
+
+
+Project Structure
 simplilearn-roundtable/
 ├── app/
-│   ├── layout.tsx          # Root layout with metadata
-│   ├── page.tsx            # Main page combining all sections
-│   └── globals.css         # Global styles and Tailwind directives
+│   ├── layout.tsx          # Root layout, fonts, metadata
+│   ├── page.tsx            # Main page composition
+│   └── globals.css         # Tailwind directives only
 ├── components/
-│   ├── AgendaSection.tsx   # Event agenda component
-│   ├── Button.tsx          # Reusable button component
-│   ├── Card.tsx            # Reusable card component
-│   ├── CTASection.tsx      # Call-to-action section with form
-│   ├── ExploreSection.tsx  # What we'll explore section
-│   ├── Footer.tsx          # Footer component
-│   ├── HeroSection.tsx     # Hero section with main RSVP form
-│   ├── Input.tsx           # Reusable input component
-│   ├── InsightsSection.tsx # Insights and takeaways section
-│   ├── Logo.tsx            # Simplilearn logo component
-│   └── SpeakersSection.tsx # Featured speakers section
+│   ├── HeroSection.tsx
+│   ├── InviteSection.tsx
+│   ├── InsightsSection.tsx
+│   ├── AgendaSection.tsx
+│   ├── SpeakersSection.tsx
+│   ├── Footer.tsx
+│   ├── Card.tsx
+│   ├── Logo.tsx
+│   └── invite/
+│       └── RSVPForm.tsx
 ├── lib/
-│   └── actions.ts          # Server actions for Airtable integration
-├── public/                 # Static assets
-├── .env.example            # Environment variables example
-├── .gitignore             # Git ignore rules
-├── next.config.ts         # Next.js configuration
-├── package.json           # Project dependencies
-├── postcss.config.mjs     # PostCSS configuration
-├── tailwind.config.ts     # Tailwind CSS configuration
-└── tsconfig.json          # TypeScript configuration
-```
+│   └── actions.ts          # Server Actions (RSVP submission)
+├── public/
+│   ├── images/
+│   └── icons/
+├── tailwind.config.ts
+├── next.config.ts
+├── tsconfig.json
+└── package.json
 
-## Building for Production
+RSVP Functionality
+-How It Works
+-Email is submitted via a Server Action
+-No API routes used
+-Minimal client-side JavaScript
+-Clear success feedback after submission
+-Environment Variables
+-Create a .env.local file:
 
-```bash
+AIRTABLE_API_KEY=your_api_key
+AIRTABLE_BASE_ID=your_base_id
+AIRTABLE_TABLE_NAME=RSVPs
+
+
+Airtable table fields:
+
+Email – Single line text
+SubmittedAt – Date with time
+
+Running the Project Locally
+npm install
+npm run dev
+
+
+Open:
+👉 http://localhost:3000
+
+Build & Production
 npm run build
 npm start
-```
 
-## Deployment
+Version Compliance (Assessment-Safe)
 
-### Deploy to Vercel (Recommended)
+All dependencies are latest stable and safe for evaluation:
+-Next.js: 15.1.x
+-React: 18.3.x
+-TypeScript: 5.x
+-Tailwind CSS: 3.4.x
+-ESLint: Next.js recommended
+-No experimental or canary features are used.
+-What Reviewers Should Look For
 
-1. Push your code to GitHub
-2. Import the repository on [Vercel](https://vercel.com)
-3. Add environment variables in Vercel dashboard
-4. Deploy
+✔ Exact spacing and alignment
+✔ Clean Tailwind usage
+✔ Reusable, focused components
+✔ Correct Server vs Client component separation
+✔ Stable responsive behavior
+✔ No unnecessary dependencies
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new)
+Notes
 
-### Deploy to Netlify
+-Built specifically for a frontend technical assessment
+-Design accuracy prioritized over abstraction
+-Some values may appear “hard-coded” — this is intentional for pixel precision
 
-1. Push your code to GitHub
-2. Import the repository on [Netlify](https://netlify.com)
-3. Add environment variables in Netlify dashboard
-4. Deploy
 
-## Technical Highlights
-
-### Server Components
-
-All components are Server Components by default, with only the form components marked as Client Components (`'use client'`) for interactivity.
-
-### Server Actions
-
-Form submissions use Next.js Server Actions for seamless server-side processing without API routes:
-
-```typescript
-// lib/actions.ts
-'use server'
-
-export async function submitRSVP(formData: FormData) {
-  // Server-side form handling with Airtable
-}
-```
-
-### Responsive Design
-
-The application is fully responsive with mobile-first design:
-- Mobile: Optimized for screens from 320px
-- Tablet: Breakpoint at 768px
-- Desktop: Breakpoint at 1024px
-
-### Performance Optimizations
-
-- Server-side rendering for optimal loading
-- Minimal client-side JavaScript
-- Optimized images and assets
-- Tailwind CSS for minimal CSS bundle size
-
-## Design Fidelity
-
-The implementation closely matches the provided design with:
-- Exact color scheme (Primary Blue: #0A1E42, Orange: #FF8C00, Cyan: #00D9FF)
-- Matching typography and spacing
-- Consistent component styling
-- Responsive layouts for mobile and desktop
-
-## Testing the RSVP Form
-
-1. Ensure environment variables are set up
-2. Fill in the email form
-3. Check your Airtable base for the new record
-4. The submission includes Email and SubmittedAt timestamp
-
-## License
-
-This project is created for the Simplilearn technical assessment.
-
-## Support
-
-For issues or questions, please contact the development team.
+Author:
+Sriram
+Frontend / Full-Stack Developer
+Technical Assessment Submission
